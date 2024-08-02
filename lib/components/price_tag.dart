@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../util.dart';
+
 class PriceTag extends StatelessWidget {
   const PriceTag({
     super.key,
@@ -139,7 +141,7 @@ class _RoundedContainer extends StatelessWidget {
                   left: 5,
                 ),
                 child: _DiagonalStrikethroughText(
-                  text: price.toString(),
+                  text: SystemDesignUtil.formatMoney(value: price),
                   textStyle: Theme.of(context)
                       .primaryTextTheme
                       .bodyLarge!
@@ -147,7 +149,7 @@ class _RoundedContainer extends StatelessWidget {
                 ),
               ),
               Text(
-                priceDiscount.toString(),
+                SystemDesignUtil.formatMoney(value: priceDiscount),
                 style:
                     Theme.of(context).primaryTextTheme.headlineSmall?.copyWith(
                           color: Colors.white,
